@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import '../styles/global.css';
 import { useState } from 'react';
 
 export default function Home() {
@@ -14,21 +15,18 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>MUHAMI AI – محامي الذكاء الاصطناعي</title>
+        <title>MUHAMI AI – مساعدك القانوني</title>
       </Head>
-
       <main>
         <h1>MUHAMI AI</h1>
-        <p className="description">مساعدك القانوني الذكي المعتمد على الدستور القطري</p>
-
+        <p className="description">مساعدك القانوني المعتمد على الدستور القطري</p>
         <textarea
           rows={5}
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="اكتب سؤالك القانوني هنا..."
         />
-        <button onClick={handleSubmit}>تحليل السؤال</button>
-
+        <button onClick={handleSubmit}>تحليل</button>
         {response && (
           <div className="result">
             <strong>الإجابة:</strong>
@@ -36,7 +34,6 @@ export default function Home() {
           </div>
         )}
       </main>
-
       <footer>
         <p>© 2025 MUHAMI AI</p>
       </footer>
